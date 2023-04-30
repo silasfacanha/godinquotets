@@ -1,5 +1,5 @@
 import React from "react";
-import frontImage from "./../assets/FrontImage.png";
+import frontImage from "./../assets/frontImage.png";
 import { HashLink as Link } from "react-router-hash-link";
 const Hero = () => {
   return (
