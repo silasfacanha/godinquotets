@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -8,19 +6,34 @@ import WisdomArea from "./components/WisdomArea";
 import Godinwho from "./components/Godinwho";
 import TheDev from "./components/TheDev";
 import Footer from "./components/Footer";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
+ 
 
   return (
-    <div className="App">
+    <BrowserRouter> 
+    <div className="App font-courier">
+       
       <Navbar />
+      
+      <div id="home">
       <Hero />
+      </div>
+      <div id= "wisdom">
       <WisdomArea />
+      </div>
+      <div id="godin">
       <Godinwho />
+      </div>
+      <div id="dev">
       <TheDev />
+      </div>
+      
       <Footer />
+      
     </div>
+    </BrowserRouter>
   );
 }
 
