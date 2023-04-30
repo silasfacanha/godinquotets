@@ -38,7 +38,7 @@ const Navbar = () => {
             <Link to="#home" smooth>
               <div onClick={handleToggle}>Home</div>
             </Link>
-            <div className="text-[#ff366a]">
+            <div className="text-[#ff366a] ">
               
               <AiOutlineClose size={20} onClick={handleToggle} />{" "}
             </div>
