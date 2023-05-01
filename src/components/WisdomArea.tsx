@@ -58,7 +58,7 @@ const WisdomArea = () => {
       
       <div className="flex flex-col justify-center items-center">
         
-          <div className={ showQuote? "transition ease-out duration-1000 opacity-100 absolute top-40 ": "top-0  opacity-0"}>
+          <div className={ showQuote? "transition ease-out duration-1000 opacity-100 absolute top-40 ": "top-40 absolute  opacity-0"}>
             <div> 
             <div className="h-auto w-auto p-auto border-2 border-black border-dashed rounded-md mx-10">
               <div className="p-2">
