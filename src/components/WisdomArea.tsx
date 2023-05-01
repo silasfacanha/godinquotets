@@ -47,7 +47,7 @@ const WisdomArea = () => {
   
 
   return (
-    <section className="h-[100vh] flex justify-center items-center my-10 relative ">
+    <section className="h-[100vh]  my-10 relative ">
       
       <div className="flex flex-col justify-center items-center">
         
