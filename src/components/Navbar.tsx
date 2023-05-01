@@ -29,16 +29,16 @@ const Navbar = () => {
 <div
         className={
           toggle
-            ? "fixed left-0 top-0 h-full w-[100%] text-3xl bg-[#ffff] ease-in-out duration-500"
+            ? "fixed left-0 top-0 h-full w-full text-3xl bg-[#ffff] ease-in-out duration-500"
             : "fixed text-3xl top-0 h-full ease-in-out duration-500 left-[-100%]"
         }
       >
         <ul >
-          <li className="p-4 border-b-2 flex justify-between items-center border-[#ff366a]">
+          <li className="p-4 border-b-2 flex  items-center border-[#ff366a] ">
             <Link to="#home" smooth>
               <div onClick={handleToggle}>Home</div>
             </Link>
-            <div className="text-[#ff366a] ">
+            <div className="text-[#ff366a] ml-[70%] ">
               
               <AiOutlineClose size={20} onClick={handleToggle} />{" "}
             </div>
