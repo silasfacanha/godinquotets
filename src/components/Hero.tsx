@@ -5,8 +5,10 @@ const Hero = () => {
   return (
     <section className="100vh">
       <div className="flex justify-center py-8 "> <img className="block h-72" src={frontImage} /></div>
-      <div className="flex flex-col items-center p-2">
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex justify-center items-center px-6">  
         <h2 className="font-semibold"> A project to spread Seth Godin's wisdom.</h2>
+        </div>
         <Link smooth to="#wisdom">
           
           <button className=" font-semibold p-4 border-solid border-2 rounded-lg bg-[#ff366a] hover:bg-[#ff366a] border-transparent">
