@@ -7,8 +7,8 @@ const Hero = () => {
       <div className="flex justify-center py-8 "> <img className="block h-72" src={frontImage} /></div>
       <div className="flex flex-col items-center justify-center">
         <div className="text-center">  
-        <h2 className="font-semibold p-4"> A project to spread Seth Godin's wisdom.</h2>
-        
+        <h2 className="font-semibold p-4 md:text-2xl"> A project to spread Seth Godin's wisdom.</h2>
+
         </div>
         <Link smooth to="#wisdom">
           

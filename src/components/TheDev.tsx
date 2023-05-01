@@ -4,8 +4,8 @@ const TheDev = () => {
   return (
     <section className="h-[100vh] p-4">
       <div className=" flex flex-col items-center ">
-        <h1 className="text-2xl"> The Dev</h1>
-        <p className="text-md">
+        <h1 className="text-2xl font-semibold"> The Dev</h1>
+        <p className="text-md sm:text-xl sm:max-w-[70%]">
           Silas Façanha is a skilled software developer specializing in React,
           JavaScript, TypeScript, CSS, GIT, MongoDB, SQL, and MUI. He focuses on
           creating user-friendly and responsive web applications with a keen eye

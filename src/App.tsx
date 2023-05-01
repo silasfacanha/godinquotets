@@ -13,7 +13,7 @@ function App() {
 
   return (
     <BrowserRouter> 
-    <div className="App font-courier">
+    <div className="App font-courier overflow-x-hidden">
        
       <Navbar />
       

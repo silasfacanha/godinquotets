@@ -41,30 +41,40 @@ const WisdomArea = () => {
     quote?.year ?? ""
   }`;
 
-  const [showQuote, setShowQuote]= useState(false);
+  const [showQuote, setShowQuote] = useState(false);
 
-  function rollBackQuote(){
-    setShowQuote(false);
-    setQuote(undefined);
-
-
+  function speakQuote() {
+    console.log("speakQuote called");
+    let utterance = new SpeechSynthesisUtterance(wholeQuote);
+    console.log("utterance:", utterance);
   }
 
-  
-  
+  function rollBackQuote() {
+    setShowQuote(false);
+    setQuote(undefined);
+  }
 
   return (
     <section className="h-[100vh]  my-10 relative ">
-      
       <div className="flex flex-col justify-center items-center">
-        
-          <div className={ showQuote? "transition ease-out duration-1000 opacity-100 absolute top-40 ": "top-40 absolute  opacity-0"}>
-            <div> 
+        <div
+          className={
+            showQuote
+              ? "transition ease-out duration-1000 opacity-100 absolute top-40 "
+              : "top-40 absolute  opacity-0"
+          }
+        >
+          <div>
             <div className="h-auto w-auto p-auto border-2 border-black border-dashed rounded-md mx-10">
               <div className="p-2">
-                {quote?.quote? (<> 
-                <i> {quote?.quote}</i>
-                <b>{quote?.source + ", " + quote?.year + "."}</b></>):"" }
+                {quote?.quote ? (
+                  <>
+                    <i> {quote?.quote}</i>
+                    <b>{quote?.source + ", " + quote?.year + "."}</b>
+                  </>
+                ) : (
+                  ""
+                )}
               </div>
 
               <div className="flex justify-end">
@@ -75,7 +85,11 @@ const WisdomArea = () => {
                 >
                   <AiFillCopy size={30} />
                 </div>
-                <div onClick={() => {}}>
+                <div
+                  onClick={() => {
+                    speakQuote();
+                  }}
+                >
                   <AiFillSound size={30} />{" "}
                 </div>
                 <div>
@@ -86,69 +100,76 @@ const WisdomArea = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div
+          className={
+            showQuote
+              ? "opacity-0  transition-opactiy duration-1000 ease-out absolute left-[150%]  "
+              : "  transition ease-out duration-1000 opacity-100 absolute top-20 "
+          }
+        >
+          <h1 className="text-2xl p-4 mx-auto">
+            Which Subject Triggers Your Curiosity?
+          </h1>
+          <ul
+            className="flex flex-wrap  p-4 gap-2"
+            onClick={() => setShowQuote(true)}
+          >
+            <div className=" bg-[#ff366a] w-full text-center p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <SubjectButton
+                onClick={() => {
+                  fetchGodinAPI("culture");
+                }}
+                subject="Culture"
+              />
             </div>
-          </div>
-        
-          <div  className={
-            showQuote? "opacity-0  transition-opactiy duration-1000 ease-out absolute left-[150%]  ": "  transition ease-out duration-1000 opacity-100 absolute top-20 "}>
-            <h1 className="text-2xl p-4 mx-auto">
-              Which Subject Triggers Your Curiosity?
-            </h1>
-            <ul className="flex flex-wrap  p-4 gap-2" onClick={()=> setShowQuote(true)}>
-              <div className=" bg-[#ff366a] w-full text-center p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
-                <SubjectButton
-                  onClick={() => {
-                    fetchGodinAPI("culture");
-                  }}
-                  subject="Culture"
-                />
-              </div>
 
-              <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
-                <SubjectButton
-                  onClick={() => {
-                    fetchGodinAPI("marketing");
-                  }}
-                  subject="Marketing"
-                />
-              </div>
+            <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <SubjectButton
+                onClick={() => {
+                  fetchGodinAPI("marketing");
+                }}
+                subject="Marketing"
+              />
+            </div>
 
-              <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
-                <SubjectButton
-                  onClick={() => {
-                    fetchGodinAPI("work");
-                  }}
-                  subject="Work"
-                />
-              </div>
+            <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <SubjectButton
+                onClick={() => {
+                  fetchGodinAPI("work");
+                }}
+                subject="Work"
+              />
+            </div>
 
-              <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
-                <SubjectButton
-                  onClick={() => {
-                    fetchGodinAPI("ideas");
-                  }}
-                  subject="Ideas"
-                />
-              </div>
-              <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
-                <SubjectButton
-                  onClick={() => {
-                    fetchGodinAPI("life");
-                  }}
-                  subject="Life"
-                />
-              </div>
-              <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
-                <SubjectButton
-                  onClick={() => {
-                    fetchGodinAPI("random");
-                  }}
-                  subject="Random"
-                />
-              </div>
-            </ul>
-          </div>
-        
+            <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <SubjectButton
+                onClick={() => {
+                  fetchGodinAPI("ideas");
+                }}
+                subject="Ideas"
+              />
+            </div>
+            <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <SubjectButton
+                onClick={() => {
+                  fetchGodinAPI("life");
+                }}
+                subject="Life"
+              />
+            </div>
+            <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <SubjectButton
+                onClick={() => {
+                  fetchGodinAPI("random");
+                }}
+                subject="Random"
+              />
+            </div>
+          </ul>
+        </div>
       </div>
     </section>
   );

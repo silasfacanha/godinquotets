@@ -4,8 +4,8 @@ const Godinwho = () => {
   return (
     <section>
       <div className=" flex flex-col items-center h-[100vh] p-2">
-      <h1 className="text-2xl"> Godin Who?</h1>
-      <p className="text-md">
+      <h1 className="text-2xl font-semibold"> Godin Who?</h1>
+      <p className="text-md sm:text-xl sm:max-w-[70%]">
         Seth Godin is an American author and entrepreneur known for his work in
         marketing, business, and leadership. He has written over 20 books,
         including "Permission Marketing" and "Purple Cow," and founded several

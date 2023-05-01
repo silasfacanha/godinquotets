@@ -33,7 +33,7 @@ const Navbar = () => {
             : "fixed text-3xl top-0 h-full ease-in-out duration-500 left-[-100%]"
         }
       >
-        <ul >
+        <ul className="font-semibold">
           <li className="p-4 border-b-2 flex  items-center border-[#ff366a] ">
             <Link to="#home" smooth>
               <div onClick={handleToggle}>Home</div>
@@ -61,11 +61,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="hidden sm:block">
-        <ul className="flex   justify-between ">
+        <ul className="flex   justify-between font-semibold">
         
           <Link smooth  to="#home"> <li className="p-4">Home</li></Link>
           <Link smooth to="#wisdom"> <li className="p-4">Wisdom Area</li></Link>
-          <Link smooth to= "#godin"><li className="p-4">Godin who?</li></Link>
+          <Link smooth to= "#godin"><li className="p-4">Godin Who?</li></Link>
           <Link smooth to="#dev"><li className="p-4">The Dev</li></Link>
         </ul>
       </div>
