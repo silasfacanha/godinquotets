@@ -41,15 +41,23 @@ const WisdomArea = () => {
     quote?.year ?? ""
   }`;
 
+  const [showQuote, setShowQuote]= useState(false);
+
+  
+  
+
   return (
-    <section className="h-[100vh] flex justify-center ">
-      <div className=" flex flex-col justify-center items-center py-auto">
-        {quote ? (
-          <div>
-            <div className="h-[55vh] w-[55vh] p-auto border-2 border-black border-dashed rounded-md flex flex-col justify-center items-center mx-10">
+    <section className="h-[100vh] flex justify-center items-center my-10 relative ">
+      
+      <div className="flex flex-col justify-center items-center">
+        
+          <div className={ showQuote? "transition ease-out duration-1000 opacity-100 absolute top-40 ": "top-0 left-0 opacity-0"}>
+            <div> 
+            <div className="h-auto w-auto p-auto border-2 border-black border-dashed rounded-md mx-10">
               <div className="p-2">
-                <i> {quote.quote}</i>{" "}
-                <b>{quote.source + ", " + quote.year + "."}</b>
+                {quote?.quote? (<> 
+                <i> {quote?.quote}</i>
+                <b>{quote?.source + ", " + quote?.year + "."}</b></>):"" }
               </div>
 
               <div className="flex justify-end">
@@ -66,18 +74,20 @@ const WisdomArea = () => {
                 <div>
                   <AiOutlineTwitter size={30} />{" "}
                 </div>
-                <div onClick={() => setQuote(undefined)}>
+                <div onClick={() => setShowQuote(false)}>
                   <AiOutlineRollback size={30} />
                 </div>
               </div>
             </div>
+            </div>
           </div>
-        ) : (
-          <div>
+        
+          <div  className={
+            showQuote? "opacity-0  transition-opactiy duration-1000 ease-out absolute left-[150%]  ": "  transition ease-out duration-1000 opacity-100 absolute top-20 "}>
             <h1 className="text-2xl p-4 mx-auto">
               Which Subject Triggers Your Curiosity?
             </h1>
-            <ul className="flex flex-wrap  p-4 gap-2">
+            <ul className="flex flex-wrap  p-4 gap-2" onClick={()=> setShowQuote(true)}>
               <div className=" bg-[#ff366a] flex items-between justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
@@ -105,7 +115,7 @@ const WisdomArea = () => {
                 />
               </div>
 
-              <div className="bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className=" bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("ideas");
@@ -131,7 +141,7 @@ const WisdomArea = () => {
               </div>
             </ul>
           </div>
-        )}
+        
       </div>
     </section>
   );
