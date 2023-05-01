@@ -43,6 +43,13 @@ const WisdomArea = () => {
 
   const [showQuote, setShowQuote]= useState(false);
 
+  function rollBackQuote(){
+    setShowQuote(false);
+    setQuote(undefined);
+
+
+  }
+
   
   
 
@@ -74,7 +81,7 @@ const WisdomArea = () => {
                 <div>
                   <AiOutlineTwitter size={30} />{" "}
                 </div>
-                <div onClick={() => setShowQuote(false)}>
+                <div onClick={() => rollBackQuote()}>
                   <AiOutlineRollback size={30} />
                 </div>
               </div>
@@ -88,7 +95,7 @@ const WisdomArea = () => {
               Which Subject Triggers Your Curiosity?
             </h1>
             <ul className="flex flex-wrap  p-4 gap-2" onClick={()=> setShowQuote(true)}>
-              <div className=" bg-[#ff366a] flex items-between justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className=" bg-[#ff366a] w-full text-center p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("culture");
@@ -97,7 +104,7 @@ const WisdomArea = () => {
                 />
               </div>
 
-              <div className=" bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("marketing");
@@ -106,7 +113,7 @@ const WisdomArea = () => {
                 />
               </div>
 
-              <div className="bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("work");
@@ -115,7 +122,7 @@ const WisdomArea = () => {
                 />
               </div>
 
-              <div className=" bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("ideas");
@@ -123,7 +130,7 @@ const WisdomArea = () => {
                   subject="Ideas"
                 />
               </div>
-              <div className="bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("life");
@@ -131,7 +138,7 @@ const WisdomArea = () => {
                   subject="Life"
                 />
               </div>
-              <div className=" bg-[#ff366a] flex justify-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+              <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
                 <SubjectButton
                   onClick={() => {
                     fetchGodinAPI("random");

@@ -6,7 +6,7 @@ interface SubjectProps {
 }
 
 const SubjectButton = (props: SubjectProps) => {
-  return <div onClick={props.onClick}>{props.subject}</div>;
+  return <div  onClick={props.onClick}>{props.subject}</div>;
 };
 
 export default SubjectButton;
