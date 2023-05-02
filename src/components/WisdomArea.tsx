@@ -73,7 +73,7 @@ const WisdomArea = () => {
                     <b>{quote?.source + ", " + quote?.year + "."}</b>
                   </>
                 ) : (
-                  ""
+                 <div><p> <b>Sorry</b>, we were not able to retrieve your quote from our API. Give it another try!</p></div>
                 )}
               </div>
 
