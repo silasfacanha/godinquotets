@@ -55,17 +55,17 @@ const WisdomArea = () => {
   }
 
   return (
-    <section className="h-[100vh]  my-10 relative ">
+    <section className="h-[100vh]  my-10 relative flex flex-col items-center  ">
       <div className="flex flex-col justify-center items-center">
         <div
           className={
             showQuote
-              ? "transition ease-out duration-1000 opacity-100 absolute top-40 "
+              ? "transition ease-out duration-1000 opacity-100 absolute w-[90%] sm: top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
               : "top-40 absolute  opacity-0"
           }
         >
           <div>
-            <div className="h-auto w-auto p-auto border-2 border-black border-dashed rounded-md mx-10">
+            <div className=" border-2 border-black border-dashed rounded-md mx-10 text-center">
               <div className="p-2">
                 {quote?.quote ? (
                   <>
@@ -77,7 +77,7 @@ const WisdomArea = () => {
                 )}
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-end cursor-pointer">
                 <div
                   onClick={() => {
                     navigator.clipboard.writeText(wholeQuote);
@@ -106,8 +106,8 @@ const WisdomArea = () => {
         <div
           className={
             showQuote
-              ? "opacity-0  transition-opactiy duration-1000 ease-out absolute left-[150%]  "
-              : "  transition ease-out duration-1000 opacity-100 absolute top-20 "
+              ? "opacity-0  transition-opactiy duration-1000 ease-out absolute scale-0 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2  "
+              : "  transition ease-out duration-1000 opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
           }
         >
           <h1 className="text-2xl p-4 mx-auto">
@@ -115,9 +115,9 @@ const WisdomArea = () => {
           </h1>
           <ul
             className="flex flex-wrap  p-4 gap-2"
-            onClick={() => setShowQuote(true)}
+            
           >
-            <div className=" bg-[#ff366a] w-full text-center p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+            <div onClick={() => setShowQuote(true)} className=" bg-[#ff366a] w-full text-center p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent  cursor-pointer">
               <SubjectButton
                 onClick={() => {
                   fetchGodinAPI("culture");
@@ -126,7 +126,7 @@ const WisdomArea = () => {
               />
             </div>
 
-            <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+            <div onClick={() => setShowQuote(true)} className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent  cursor-pointer">
               <SubjectButton
                 onClick={() => {
                   fetchGodinAPI("marketing");
@@ -135,7 +135,7 @@ const WisdomArea = () => {
               />
             </div>
 
-            <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+            <div onClick={() => setShowQuote(true)} className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent cursor-pointer">
               <SubjectButton
                 onClick={() => {
                   fetchGodinAPI("work");
@@ -144,7 +144,7 @@ const WisdomArea = () => {
               />
             </div>
 
-            <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+            <div onClick={() => setShowQuote(true)} className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent cursor-pointer">
               <SubjectButton
                 onClick={() => {
                   fetchGodinAPI("ideas");
@@ -152,7 +152,7 @@ const WisdomArea = () => {
                 subject="Ideas"
               />
             </div>
-            <div className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+            <div onClick={() => setShowQuote(true)} className="bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent cursor-pointer">
               <SubjectButton
                 onClick={() => {
                   fetchGodinAPI("life");
@@ -160,7 +160,7 @@ const WisdomArea = () => {
                 subject="Life"
               />
             </div>
-            <div className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent">
+            <div onClick={() => setShowQuote(true)} className=" bg-[#ff366a] text-center w-full p-1 border-2 border-solid border-black rounded-md hover:bg-[#ff366a] border-transparent cursor-pointer">
               <SubjectButton
                 onClick={() => {
                   fetchGodinAPI("random");

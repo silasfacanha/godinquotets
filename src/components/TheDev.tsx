@@ -2,8 +2,8 @@ import React from "react";
 
 const TheDev = () => {
   return (
-    <section className="h-[100vh] p-4">
-      <div className=" flex flex-col items-center ">
+    <section className="h-[100vh] p-4  flex flex-col items-center justify-center">
+      <div className="flex flex-col justify-between items-center">
         <h1 className="text-2xl font-semibold"> The Dev</h1>
         <p className="text-md sm:text-xl sm:max-w-[70%]">
           Silas Façanha is a skilled software developer specializing in React,

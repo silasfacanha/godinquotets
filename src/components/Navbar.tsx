@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div className="h-[10%] flex justify-between">
       <div>
-        <h1 className="p-4 text-2xl font-bold "> Godin Quote </h1>{" "}
+      <Link smooth  to="#home"><h1 className="p-4 text-2xl font-bold "> Godin Quote </h1></Link>
 
       </div>
 

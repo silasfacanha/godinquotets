@@ -2,8 +2,8 @@ import React from "react";
 
 const Godinwho = () => {
   return (
-    <section>
-      <div className=" flex flex-col items-center h-[100vh] p-2">
+    <section className="h-[100vh] p-4  flex flex-col items-center justify-center">
+    <div className="flex flex-col justify-between items-center">
       <h1 className="text-2xl font-semibold"> Godin Who?</h1>
       <p className="text-md sm:text-xl sm:max-w-[70%]">
         Seth Godin is an American author and entrepreneur known for his work in
