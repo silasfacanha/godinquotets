@@ -65,7 +65,7 @@ const WisdomArea = () => {
           }
         >
           <div>
-            <div className=" border-2 border-black border-dashed rounded-md mx-10 text-center">
+            <div className=" border-2 border-black border-dashed rounded-md  text-center">
               <div className="p-2">
                 {quote?.quote ? (
                   <>
