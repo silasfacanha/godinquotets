@@ -61,7 +61,7 @@ const WisdomArea = () => {
           className={
             showQuote
               ? "transition ease-out duration-1000 opacity-100 absolute w-[90%] sm: top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
-              : "top-40 absolute  opacity-0"
+              : "scale-0 absolute  opacity-0"
           }
         >
           <div>
