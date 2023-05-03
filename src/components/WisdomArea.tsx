@@ -43,15 +43,14 @@ const WisdomArea = () => {
 
   const [showQuote, setShowQuote] = useState(false);
 
-  function speakQuote() {
-    console.log("speakQuote called");
-    let utterance = new SpeechSynthesisUtterance(wholeQuote);
-    console.log("utterance:", utterance);
-  }
-
+  const msg = new SpeechSynthesisUtterance()
+  msg.text = wholeQuote;
+ 
+  
   function rollBackQuote() {
     setShowQuote(false);
     setQuote(undefined);
+    window.speechSynthesis.cancel();
   }
 
   return (
@@ -61,7 +60,7 @@ const WisdomArea = () => {
           className={
             showQuote
               ? "transition ease-out duration-1000 opacity-100 absolute w-[90%] sm: top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
-              : "scale-0 absolute  opacity-0"
+              : "scale-0 absolute opacity-0"
           }
         >
           <div>
@@ -87,14 +86,17 @@ const WisdomArea = () => {
                 </div>
                 <div
                   onClick={() => {
-                    speakQuote();
+                    window.speechSynthesis.speak(msg);
                   }}
                 >
                   <AiFillSound size={30} />{" "}
                 </div>
-                <div>
+                <a 
+          href={`https://twitter.com/intent/tweet?text=${quote?.quote} ${quote?.source}, ${quote?.year}`}
+          target="blank"
+          rel="noopener noreferrer">
                   <AiOutlineTwitter size={30} />{" "}
-                </div>
+                </a>
                 <div onClick={() => rollBackQuote()}>
                   <AiOutlineRollback size={30} />
                 </div>
