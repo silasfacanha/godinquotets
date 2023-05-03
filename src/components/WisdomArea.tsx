@@ -1,12 +1,14 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SubjectButton from "./SubjectButton";
 import axios, { AxiosResponse } from "axios";
 import {
   AiFillCopy,
   AiFillSound,
   AiOutlineTwitter,
-  AiOutlineRollback,
+ 
 } from "react-icons/ai";
+
+import {FaRedo} from "react-icons/fa"
 
 interface Data {
   quote: string;
@@ -76,7 +78,10 @@ const WisdomArea = () => {
                 )}
               </div>
 
-              <div className="flex justify-end cursor-pointer">
+              <div className="flex justify-end items-center cursor-pointer">
+              <div onClick={() => rollBackQuote()}>
+                  <FaRedo size={25} color="#ff366a" />
+                </div>
                 <div
                   onClick={() => {
                     navigator.clipboard.writeText(wholeQuote);
@@ -97,9 +102,7 @@ const WisdomArea = () => {
           rel="noopener noreferrer">
                   <AiOutlineTwitter size={30} />{" "}
                 </a>
-                <div onClick={() => rollBackQuote()}>
-                  <AiOutlineRollback size={30} />
-                </div>
+               
               </div>
             </div>
           </div>
