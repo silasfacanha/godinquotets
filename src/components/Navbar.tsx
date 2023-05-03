@@ -33,7 +33,7 @@ const Navbar = () => {
             : "fixed text-3xl top-0 h-full ease-in-out duration-500 left-[-100%]"
         }
       >
-        <ul className="font-semibold">
+        <ul >
           <li className="p-4 border-b-2 flex  items-center border-[#ff366a] ">
             <Link to="#home" smooth>
               <div onClick={handleToggle}>Home</div>
