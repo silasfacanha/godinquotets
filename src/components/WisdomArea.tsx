@@ -7,8 +7,9 @@ import {
   AiOutlineTwitter,
  
 } from "react-icons/ai";
-
-import {FaRedo} from "react-icons/fa"
+import {FaRedo} from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface Data {
   quote: string;
@@ -18,6 +19,7 @@ interface Data {
 }
 
 const WisdomArea = () => {
+  
   const [quote, setQuote] = useState<Data>();
   const fetchGodinAPI = (theme: string) => {
     axios
@@ -48,6 +50,7 @@ const WisdomArea = () => {
   const msg = new SpeechSynthesisUtterance();
   msg.lang="en-US";
   msg.text = wholeQuote;
+  const notify = (toastText:string) => toast(toastText);
  
   
   function rollBackQuote() {
@@ -86,6 +89,7 @@ const WisdomArea = () => {
                 <div
                   onClick={() => {
                     navigator.clipboard.writeText(wholeQuote);
+                    notify("You've just copied a great quote!")
                   }}
                 >
                   <AiFillCopy size={30} />
@@ -93,6 +97,7 @@ const WisdomArea = () => {
                 <div
                   onClick={() => {
                     window.speechSynthesis.speak(msg);
+                    notify("Turn up the volume to hear some wisdom!")
                   }}
                 >
                   <AiFillSound size={30} />{" "}
@@ -177,6 +182,7 @@ const WisdomArea = () => {
           </ul>
         </div>
       </div>
+      <ToastContainer/>
     </section>
   );
 };
