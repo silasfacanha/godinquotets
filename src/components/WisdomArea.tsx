@@ -45,7 +45,8 @@ const WisdomArea = () => {
 
   const [showQuote, setShowQuote] = useState(false);
 
-  const msg = new SpeechSynthesisUtterance()
+  const msg = new SpeechSynthesisUtterance();
+  msg.lang="en-US";
   msg.text = wholeQuote;
  
   
