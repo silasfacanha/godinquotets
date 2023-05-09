@@ -50,7 +50,8 @@ const WisdomArea = () => {
   const msg = new SpeechSynthesisUtterance();
   const voices = speechSynthesis.getVoices();
   const englishVoices = voices.filter(voice=>voice.lang=="en-US");
-  msg.voice= englishVoices[0];
+  msg.voice= englishVoices[4];
+  console.log(englishVoices);
   msg.text = wholeQuote;
   const notify = (toastText:string) => toast(toastText);
  
