@@ -39,7 +39,7 @@ const WisdomArea = () => {
       });
   };
 
-  useEffect(() => touchGodinAPI("random"));
+  useEffect(() => touchGodinAPI("random"), []);
 
   let wholeQuote = `${quote?.quote ?? ""} ${quote?.source ?? ""}, ${
     quote?.year ?? ""
@@ -50,7 +50,7 @@ const WisdomArea = () => {
   const msg = new SpeechSynthesisUtterance();
   msg.lang="en-US";
   const voices = speechSynthesis.getVoices();
-  msg.voice= voices[2];
+  msg.voice=voices[6];
   msg.text = wholeQuote;
   const notify = (toastText:string) => toast(toastText);
  
