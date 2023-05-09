@@ -98,7 +98,8 @@ const WisdomArea = () => {
                   <AiFillCopy size={30} />
                 </div>
                 <div
-                  onClick={() => {
+                  onClick={() => { 
+                    window.speechSynthesis.cancel();
                     window.speechSynthesis.speak(msg);
                     notify("Turn up the volume to hear some wisdom!")
                   }}
