@@ -48,9 +48,9 @@ const WisdomArea = () => {
   const [showQuote, setShowQuote] = useState(false);
 
   const msg = new SpeechSynthesisUtterance();
-  msg.lang="en-US";
   const voices = speechSynthesis.getVoices();
-  msg.voice=voices[6];
+  const englishVoices = voices.filter(voice=>voice.lang=="en-US");
+  msg.voice= englishVoices[1];
   msg.text = wholeQuote;
   const notify = (toastText:string) => toast(toastText);
  
